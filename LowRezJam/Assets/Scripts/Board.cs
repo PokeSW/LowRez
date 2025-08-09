@@ -124,7 +124,43 @@ public class Board : MonoBehaviour
     private void CanComplete()//check to see if player can reach the current column 4
     {
         completeable = false;
-        //check, if so then fill reachabletiles with correct ones
+        bool row1 = true;
+        bool row2 = true;
+        bool row3 = true;
+        bool row4 = true;
+        bool row5 = true;
+        //check, if so then fill reachableTiles[] with correct ones
+        {
+            if (board[4, 1] == 1)// is 4,1 a wall?
+            {
+                row1 = false;
+                reachableTiles[1, 1] = 0;
+            }
+            if (board[4, 2] == 1)// is 4,2 a wall?
+            {
+                row2 = false;
+                reachableTiles[1, 2] = 0;
+            }
+            if (board[4, 3] == 1)// is 4,3 a wall?
+            {
+                row3 = false;
+                reachableTiles[1, 3] = 0;
+            }
+            if (board[4, 4] == 1)// is 4,4 a wall?
+            {
+                row4 = false;
+                reachableTiles[1, 4] = 0;
+            }
+            if (board[4, 5] == 1)// is 4,5 a wall?
+            {
+                row5 = false;
+                reachableTiles[1, 5] = 0;
+            }
+        }//check for walls to skip checking those rows
+        if (row1)// if row1 is still active 
+        {
+            
+        }
         completeable = true;
     }
     private void CalcWeight()
